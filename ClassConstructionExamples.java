@@ -1,10 +1,7 @@
-// a.) Querying the customer database
 import java.time.LocalDate;
 
 public record Entry(String name, String address, String email, String product, LocalDate purchaseDate) {}
 
-
-// b.) Reusable filtering logic using a functional interface
 @FunctionalInterface
 interface EntryFilter {
     boolean filter(Entry entry);
@@ -22,11 +19,6 @@ class EntryUtils {
 }
 
 
-// Example usage for filtering
-// EntryUtils.filterEntries(allEntries, entry -> entry.purchaseDate().isAfter(LocalDate.of(2023, 1, 1)));
-
-
-// c.) Modeling financial transactions
 abstract class Transaction {
     protected double amount;
     protected String currency;
